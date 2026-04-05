@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	<feature id="com.epod.adt.mcp.feature" version="0.0.0" url="features/com.epod.adt.mcp.feature_1.0.0.qualifier.jar">
+		<category name="com.epod.adt.mcp"/>
+	</feature>
+	<category-def name="com.epod.adt.mcp" label="EPOD ADT MCP Server">
+		<description>
+			MCP Server plugin for SAP ADT that enables AI coding assistant integration with SAP systems via SNC/SSO.
+		</description>
+	</category-def>
+</site>

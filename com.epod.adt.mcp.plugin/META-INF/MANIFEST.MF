@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: EPOD ADT MCP Server
+Bundle-SymbolicName: com.epod.adt.mcp.plugin;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.epod.adt.mcp.Activator
+Bundle-Vendor: EPOD
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ com.sap.adt.communication,
+ com.sap.adt.destinations,
+ com.sap.adt.compatibility,
+ com.sap.adt.tools.core,
+ com.sap.adt.project
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/gson-2.11.0.jar
+Export-Package: com.epod.adt.mcp,
+ com.epod.adt.mcp.server,
+ com.epod.adt.mcp.tools

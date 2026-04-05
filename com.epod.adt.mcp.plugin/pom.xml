@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.epod.adt.mcp</groupId>
+		<artifactId>com.epod.adt.mcp.parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>com.epod.adt.mcp.plugin</artifactId>
+	<packaging>eclipse-plugin</packaging>
+	<name>EPOD ADT MCP Server Plugin</name>
+
+	<properties>
+		<proguard.version>7.6.0</proguard.version>
+		<eclipse.home>/Applications/ABAPDevelopmentTools.app/Contents/Eclipse</eclipse.home>
+		<jdk17.home>/Library/Java/JavaVirtualMachines/sapmachine-17.jdk/Contents/Home</jdk17.home>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.wvengen</groupId>
+				<artifactId>proguard-maven-plugin</artifactId>
+				<version>2.6.1</version>
+				<executions>
+					<execution>
+						<id>obfuscate</id>
+						<phase>package</phase>
+						<goals>
+							<goal>proguard</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<proguardVersion>${proguard.version}</proguardVersion>
+					<obfuscate>true</obfuscate>
+					<injar>${project.build.finalName}.jar</injar>
+					<outjar>${project.build.finalName}.jar</outjar>
+					<proguardInclude>${project.basedir}/proguard.conf</proguardInclude>
+					<libs>
+						<lib>${jdk17.home}/jmods/java.base.jmod</lib>
+						<lib>${jdk17.home}/jmods/java.logging.jmod</lib>
+						<lib>${jdk17.home}/jmods/java.net.http.jmod</lib>
+						<lib>${jdk17.home}/jmods/jdk.httpserver.jmod</lib>
+						<lib>${jdk17.home}/jmods/java.xml.jmod</lib>
+						<lib>${jdk17.home}/jmods/java.desktop.jmod</lib>
+						<lib>${eclipse.home}/plugins</lib>
+					</libs>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.guardsquare</groupId>
+						<artifactId>proguard-base</artifactId>
+						<version>${proguard.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,8 @@
+abap-sources/
+com.sap.adt-main/
+.claude/
+.DS_Store
+target/
+*.class
+AI_CONTEXT.md
+CLAUDE.md
