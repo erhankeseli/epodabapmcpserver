@@ -1,3 +1,8 @@
+>
+> [!NOTE]
+> This is a read-only mirror. Original repo and development: [git.epod.dev/erhan/epodabapmcpserver](https://git.epod.dev/erhan/epodabapmcpserver)
+>
+
 # EPOD ADT MCP Server
 
 An Eclipse ADT plugin that exposes SAP ABAP systems to AI coding assistants via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io). It runs an embedded HTTP server inside Eclipse, allowing any MCP-compatible client to search, read, edit, test, and analyze ABAP code -- all through the existing ADT SNC/SSO session.
